@@ -1,0 +1,59 @@
+{
+    "valueType": "relations",
+    "values": [
+        [{
+            "_typeName": "Pregnancy",
+            "id": "cjfun7e9qd1690b62webpx0yg",
+            "fieldName": "cow"
+        }, {
+            "_typeName": "Cattle",
+            "id": "cjeuexms7jum30a151yxi0tjo",
+            "fieldName": "pregnancies"
+        }],
+        [{
+            "_typeName": "Cattle",
+            "id": "cjeuexms7jum30a151yxi0tjo",
+            "fieldName": "calves"
+        }, {
+            "_typeName": "Calf",
+            "id": "cjfums7m4crsc0b628axgefx4",
+            "fieldName": "cow"
+        }],
+        [{
+            "_typeName": "Weight",
+            "id": "cjfun3v7qcz930b62hjfaw0fx",
+            "fieldName": "cow"
+        }, {
+            "_typeName": "Cattle",
+            "id": "cjeuexms7jum30a151yxi0tjo",
+            "fieldName": "weights"
+        }],
+        [{
+            "_typeName": "Health",
+            "id": "cjfun3ec2cym20b621u8fijan",
+            "fieldName": "cow"
+        }, {
+            "_typeName": "Cattle",
+            "id": "cjeuexms7jum30a151yxi0tjo",
+            "fieldName": "healths"
+        }],
+        [{
+            "_typeName": "User",
+            "id": "cjest5ezoumvq0a15sbcdvsl1",
+            "fieldName": "cattle"
+        }, {
+            "_typeName": "Cattle",
+            "id": "cjeuexms7jum30a151yxi0tjo",
+            "fieldName": "user"
+        }],
+        [{
+            "_typeName": "Treatment",
+            "id": "cjfun4wfyczsg0b62bkbfz6b8",
+            "fieldName": "cow"
+        }, {
+            "_typeName": "Cattle",
+            "id": "cjeuexms7jum30a151yxi0tjo",
+            "fieldName": "treatments"
+        }]
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "valueType": "nodes",
+    "values": [{
+        "_typeName": "User",
+        "id": "cjest5ezoumvq0a15sbcdvsl1",
+        "createdAt": "2018-03-15T17:48:05.000Z",
+        "firebaseId": "BHsta0MNg4UiMaLEMZMzmnZkbwd2",
+        "name": "",
+        "updatedAt": "2018-03-15T17:48:05.000Z"
+    }, {
+        "_typeName": "Cattle",
+        "id": "cjeuexms7jum30a151yxi0tjo",
+        "acquired": "Owner",
+        "archived": true,
+        "breed": "Black Angus",
+        "breeding_status": "Pregnant",
+        "createdAt": "2018-03-16T20:45:39.000Z",
+        "legacy_id": 123,
+        "notes": "dwqccdc cdc dac ",
+        "owner": "Jon smith",
+        "primary_id": "A23",
+        "profile_photo": "https://asdasdad.com",
+        "purchase_price": 1000,
+        "secondary_id": "Betsy",
+        "seller": "Jon Doe",
+        "sex": false,
+        "sold_price": 2000,
+        "updatedAt": "2018-04-11T05:22:46.000Z"
+    }, {
+        "_typeName": "Calf",
+        "id": "cjfums7m4crsc0b628axgefx4",
+        "archived": false,
+        "birth_weight": 123,
+        "breed": "Black Angus",
+        "calving_ease": 2,
+        "createdAt": "2018-04-11T05:05:05.000Z",
+        "dob": "2018-04-11T05:03:20.374Z",
+        "horns": "",
+        "notes": "qewf wqef wfq fqwf",
+        "primary_id": "A24",
+        "result": "Kept",
+        "sex": "Male",
+        "sire_id": 2,
+        "updatedAt": "2018-04-11T05:05:05.000Z",
+        "weaning_weight": 123,
+        "yearling_weight": 234
+    }, {
+        "_typeName": "Health",
+        "id": "cjfun3ec2cym20b621u8fijan",
+        "archived": false,
+        "createdAt": "2018-04-11T05:13:47.000Z",
+        "date": "2018-04-11T05:13:24.720Z",
+        "health_name": "Black leg",
+        "health_notes": "sdc asdc dscdca dca",
+        "health_status": 2,
+        "updatedAt": "2018-04-11T05:13:47.000Z"
+    }, {
+        "_typeName": "Weight",
+        "id": "cjfun3v7qcz930b62hjfaw0fx",
+        "createdAt": "2018-04-11T05:14:09.000Z",
+        "date": "2018-04-11T05:13:50.718Z",
+        "updatedAt": "2018-04-11T05:14:09.000Z",
+        "weight_notes": "ds daDSD SADA D sdf",
+        "weight_total": "1000"
+    }, {
+        "_typeName": "Treatment",
+        "id": "cjfun4wfyczsg0b62bkbfz6b8",
+        "createdAt": "2018-04-11T05:14:57.000Z",
+        "date": "2018-04-11T05:14:37.544Z",
+        "treatment_name": "Pencillan 20 mg",
+        "treatment_notes": "sdcsdcs csdc dcsd cdscs ",
+        "updatedAt": "2018-04-11T05:14:57.000Z"
+    }, {
+        "_typeName": "Pregnancy",
+        "id": "cjfun7e9qd1690b62webpx0yg",
+        "ai_date": "2018-04-11T05:15:01.013Z",
+        "ai_sire_id": "12",
+        "archived": false,
+        "check_date": "2018-04-11T05:15:01.013Z",
+        "check_sex": "Male",
+        "createdAt": "2018-04-11T05:16:54.000Z",
+        "exposed_date": "2018-04-11T05:15:01.013Z",
+        "exposed_end_date": "2018-04-11T05:15:01.013Z",
+        "exposed_sire_id": "12",
+        "result": "Birth",
+        "updatedAt": "2018-04-11T05:16:54.000Z"
+    }]
+}
