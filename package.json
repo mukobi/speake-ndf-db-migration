@@ -1,0 +1,23 @@
+{
+  "name": "speake-ndf-db-migration",
+  "version": "1.0.0",
+  "description": "Database migration for a freelance job",
+  "main": "index.js",
+  "dependencies": {
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukobi/speake-ndf-db-migration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukobi/speake-ndf-db-migration/issues"
+  },
+  "homepage": "https://github.com/mukobi/speake-ndf-db-migration#readme"
+}
