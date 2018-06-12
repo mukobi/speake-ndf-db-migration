@@ -2,30 +2,46 @@
 const USERNAME = "postgres"
 const PASSWORD = "postgres"
 const HOST = 'localhost'
-const DATABASE = "speake_postgres_db"
+const OLDDATABASE = "speake_postgres_db"
+const NEWDATABASE = "normalized"
 
 // pg module is required
 const { Pool, Client } = require('pg')
 
-const client = new Client({
-    user: USERNAME,
-    host: HOST,
-    database: DATABASE,
-    password: PASSWORD
-})
+const logResponse = function(res) {
+    let output
+    if(res.rows[0] !== undefined) {
+        output = res.rows[0].message
+    }
+    else {
+        output = "No rows returned" 
+    }
+    console.log(output)
+} 
 
 async function main() {
-    await client.connect()
+    const oldClient = new Client({
+        user: USERNAME,
+        host: HOST,
+        database: OLDDATABASE,
+        password: PASSWORD
+    })
+    await oldClient.connect()
+    
+    // get rid of new db if exists
+    await oldClient.query('DROP DATABASE ' + NEWDATABASE) 
 
-    const res = await client.query('SELECT $1::text as message', ['Hello world!'])
-    console.log(res.rows[0].message) // Hello world!
-    await client.end()
+    // copy over to new database
+    logResponse(await oldClient.query(
+        'CREATE DATABASE normalized WITH TEMPLATE ' + OLDDATABASE + ' OWNER ' + USERNAME
+    ))
+
+    await oldClient.end()
 }
 
 (async ()=>{
     try{
-      var result = await main();
-      console.log(result);
+      await main();
     }catch(e){
       console.log(e)
     }
