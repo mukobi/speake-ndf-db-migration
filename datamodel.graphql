@@ -1,4 +1,110 @@
 type User {
   id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
   name: String!
+  firebaseId: String! @unique
+  cattle: [Cattle!]!
+}
+
+type Cattle {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String
+  legacy_id: Int,
+  medical_status: String
+  notes: String
+  breeding_status: String
+  archived: Boolean
+  sex: Boolean,
+  dob: DateTime,
+  breed: String
+  weight: Float
+  purchase_date: DateTime
+  purchase_price: Float
+  sold_date: DateTime
+  sold_price: Float
+  seller: String
+  owner: String
+  acquired: String
+  horns: String
+  secondary_breed: String
+  primary_id: String
+  secondary_id: String
+  profile_photo: String
+  user: User!
+  calves: [Calf!]!
+  healths: [Health!]!
+  weights: [Weight!]!
+  treatments: [Treatment!]!
+  pregnancies: [Pregnancy!]!
+}
+
+type Calf {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  primary_id: String
+  dob: DateTime
+  result: String
+  notes: String
+  sex: String
+  archived: Boolean
+  breed: String
+  horns: String
+  calving_ease: Int
+  sire_id: Int
+  birth_weight: Float
+  weaning_weight: Float
+  yearling_weight: Float
+  cow: Cattle!
+}
+
+type Health {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  health_name: String
+  health_notes: String
+  health_status: Int
+  date: DateTime
+  archived: Boolean! @default(value: false)
+  cow: Cattle!
+}
+
+type Weight {
+  id: ID! @unique
+  weight_notes: String
+  date: DateTime
+  weight_total: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  cow: Cattle!
+}
+
+type Treatment {
+  id: ID! @unique
+  treatment_notes: String
+  date: DateTime
+  treatment_name: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  cow: Cattle!
+}
+
+type Pregnancy {
+  id: ID! @unique
+  archived: Boolean
+  exposed_date: DateTime
+  exposed_end_date: DateTime
+  ai_date: DateTime
+  check_date: DateTime
+  check_sex: String
+  ai_sire_id: String
+  exposed_sire_id: String
+  result: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  cow: Cattle!
 }
