@@ -35,8 +35,11 @@ async function main() {
     logResponse(await oldClient.query(
         'CREATE DATABASE normalized WITH TEMPLATE ' + OLDDATABASE + ' OWNER ' + USERNAME
     ))
+    console.log("New database " + NEWDATABASE + " copied from " + OLDDATABASE)
 
     await oldClient.end()
+
+    // now do stuff with newClient on NEWDATABASE
 }
 
 (async ()=>{
