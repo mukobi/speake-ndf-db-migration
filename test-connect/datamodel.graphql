@@ -1,0 +1,217 @@
+type Activity_logs @pgTable(name: "activity_logs") {
+  company_id: Int
+  created_at: DateTime!
+  id: Int!
+  message: String
+  updated_at: DateTime!
+  user_id: Int
+}
+
+type Admins @pgTable(name: "admins") {
+  created_at: DateTime!
+  current_sign_in_at: DateTime
+  current_sign_in_ip: null
+  email: String! @default(value: "")
+  encrypted_password: String! @default(value: "")
+  id: Int!
+  last_sign_in_at: DateTime
+  last_sign_in_ip: null
+  remember_created_at: DateTime
+  reset_password_sent_at: DateTime
+  reset_password_token: String
+  sign_in_count: Int! @default(value: 0)
+  updated_at: DateTime!
+}
+
+type Ar_internal_metadata @pgTable(name: "ar_internal_metadata") {
+  created_at: DateTime!
+  key: String!
+  updated_at: DateTime!
+  value: String
+}
+
+type Breeds @pgTable(name: "breeds") {
+  company_id: Int
+  created_at: DateTime!
+  id: Int!
+  name: String
+  updated_at: DateTime!
+}
+
+type Cancellation_requests @pgTable(name: "cancellation_requests") {
+  company_id: Int!
+  created_at: DateTime!
+  dollar_value: Float
+  explanation: String
+  id: Int!
+  paid: Boolean! @default(value: false)
+  reason: String
+  updated_at: DateTime!
+  user_id: Int!
+}
+
+type Cattles @pgTable(name: "cattles") {
+  archived: Boolean
+  bangs_tag: String
+  breed: String
+  breeding_status: String
+  castrated: Boolean
+  created_at: DateTime!
+  dob: null
+  ear_tag: String
+  father_id: Int
+  fields_id: Int
+  herd_id: Int!
+  id: Int!
+  medical_status: String
+  mother_id: Int
+  name: String
+  notes: String
+  owner: String
+  purchase_date: DateTime
+  purchase_price: Float
+  seller: String
+  sex: String
+  sold_date: DateTime
+  sold_price: Float
+  updated_at: DateTime!
+  weight: Float
+}
+
+type Companies @pgTable(name: "companies") {
+  active: Boolean! @default(value: true)
+  created_at: DateTime!
+  email: String!
+  farm_lat: Float
+  farm_long: Float
+  first_engagement_prompt_sent: DateTime
+  id: Int!
+  initial_conversion_date: DateTime
+  name: String
+  pending_deactivation: Boolean! @default(value: false)
+  phone: String
+  stripe_customer_id: String
+  stripe_plan: String
+  stripe_subscription_id: String
+  trial: Boolean! @default(value: true)
+  trial_expiration: DateTime
+  trial_expired_reminder_sent: DateTime
+  trial_expiring_reminder_sent: DateTime
+  updated_at: DateTime!
+}
+
+type Healths @pgTable(name: "healths") {
+  cattle_id: Int
+  created_at: DateTime!
+  date: DateTime
+  health_name: String
+  health_notes: String
+  health_status: String
+  id: Int!
+  updated_at: DateTime!
+}
+
+type Herds @pgTable(name: "herds") {
+  company_id: Int
+  created_at: DateTime!
+  herd_tag_id: String
+  id: Int!
+  is_default_herd: Boolean! @default(value: false)
+  name: String
+  updated_at: DateTime!
+  user_id: Int
+}
+
+type Oauth_access_grants @pgTable(name: "oauth_access_grants") {
+  application: Oauth_applications! @pgRelation(column: "application_id")
+  created_at: DateTime!
+  expires_in: Int!
+  id: Int!
+  redirect_uri: String!
+  resource_owner_id: Int!
+  revoked_at: DateTime
+  scopes: String
+  token: String!
+}
+
+type Oauth_access_tokens @pgTable(name: "oauth_access_tokens") {
+  application: Oauth_applications @pgRelation(column: "application_id")
+  created_at: DateTime!
+  expires_in: Int
+  id: Int!
+  previous_refresh_token: String! @default(value: "")
+  refresh_token: String
+  resource_owner_id: Int
+  revoked_at: DateTime
+  scopes: String
+  token: String!
+}
+
+type Oauth_applications @pgTable(name: "oauth_applications") {
+  created_at: DateTime!
+  id: Int!
+  name: String!
+  redirect_uri: String!
+  scopes: String! @default(value: "")
+  secret: String!
+  uid: String!
+  updated_at: DateTime!
+  oauth_access_grantss: [Oauth_access_grants!]!
+  oauth_access_tokenss: [Oauth_access_tokens!]!
+}
+
+type Schema_migrations @pgTable(name: "schema_migrations") {
+  version: String!
+}
+
+type Stripe_event_logs @pgTable(name: "stripe_event_logs") {
+  created_at: DateTime!
+  customer_id: String
+  data: String
+  event_id: String
+  event_type: String
+  id: Int!
+  livemode: Boolean!
+  note: String
+  pending_webhooks: Int
+  processed: Boolean! @default(value: false)
+  request: String
+  updated_at: DateTime!
+}
+
+type Treatments @pgTable(name: "treatments") {
+  cattle_id: Int
+  created_at: DateTime!
+  date: DateTime
+  id: Int!
+  treatment_name: String
+  treatment_notes: String
+  updated_at: DateTime!
+}
+
+type Users @pgTable(name: "users") {
+  company_id: Int
+  created_at: DateTime!
+  current_sign_in_at: DateTime
+  current_sign_in_ip: null
+  email: String! @default(value: "")
+  encrypted_password: String! @default(value: "")
+  id: Int!
+  last_sign_in_at: DateTime
+  last_sign_in_ip: null
+  remember_created_at: DateTime
+  reset_password_sent_at: DateTime
+  reset_password_token: String
+  sign_in_count: Int! @default(value: 0)
+  updated_at: DateTime!
+}
+
+type Weights @pgTable(name: "weights") {
+  cattle_id: Int
+  created_at: DateTime!
+  date: DateTime
+  id: Int!
+  updated_at: DateTime!
+  weight_notes: String
+  weight_total: Float
+}
